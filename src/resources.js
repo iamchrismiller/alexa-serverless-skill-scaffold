@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * i18n Strings for Alexa Handlers
+ */
 module.exports = {
   'en-US': {
     translation: {
