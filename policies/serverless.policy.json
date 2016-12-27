@@ -15,7 +15,12 @@
                 "iam:GetRole",
                 "iam:CreateRole",
                 "iam:DeleteRole",
-                "iam:PutRolePolicy"
+                "iam:PutRolePolicy",
+                "apigateway:POST",
+                "apigateway:GET",
+                "apigateway:PUT",
+                "apigateway:PATCH",
+                "apigateway:DELETE"
             ],
             "Resource": [
                 "*"

@@ -48,7 +48,7 @@ Serverless: Success! Your AWS access keys were stored under the "default" profil
 ## Setting Up AWS Policy
 
 You will want to create the custom policy in AWS to allow Serverless to do its job
-The current policy that works is in the root of this project named `serverless.policy`
+The current policy that works `policies/serverless.policy`
 
 You may want to lock this down a bit further
 
@@ -56,7 +56,7 @@ You may want to lock this down a bit further
 
 For Static Linting we leverage ESLint with the rules defined in `.eslintrc.js`
 
-`yarn run lint`
+`yarn lint`
 
 ## Testing
 
@@ -64,13 +64,13 @@ For Testing we leverage JEST to run both the Unit and Integration tests.
 
 #### Unit
 
-`yarn run test:unit`
+`yarn test:unit`
 
 #### Integration
 
 For Integration testing we are leveraging Lambda Local to test the lambda method integration locally
 
-`yarn run test:integration`
+`yarn test:integration`
 
 <!-- `serverless invoke --function spike --stage dev --region us-east-1 --log` -->
 <!-- `serverless invoke --function <functionName> --stage <stage> --region us-east-1 --log` -->
@@ -80,7 +80,7 @@ For Integration testing we are leveraging Lambda Local to test the lambda method
 For Deploying our Lambda Functions we leverage Serverless to create the Stack
 and push updates to existing lambda functions
 
-`yarn run deploy`
+`yarn  deploy`
 
 Serverless Deploy Output should look something like this
 

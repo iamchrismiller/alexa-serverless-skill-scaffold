@@ -18,19 +18,42 @@ provider:
   stage: dev
   region: us-east-1
   memorySize: 512
+  # cfLogs: true
   profile: default
+  apiKeys:
+    - DummyKey
 
 package:
-  exclude: test
+  exclude:
+  - coverage/**
+  - test/**
+  - policies/**
+  - .editorconfig
+  - .env-*
+  - .eslint*
+  - .gitignore
+  - .npmignore
+  - LICENSE
+  - README.md
 
 functions:
-  index:
-    handler: src/index.main
-    description: 'Scaffold Default for Lambda Serverless Deploy'
-    timeout: 5
   alexa:
-    handler: src/index.alexa
+    handler: src/lambdas/alexa.main
     description: 'Alexa Skill Kit Lambda Function'
     timeout: 5
     events:
       - alexaSkill
+  create:
+    handler: src/lambdas/create.main
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
+  read:
+    handler: src/lambdas/read.main
+    events:
+      - http:
+          path: read
+          method: get
+          cors: true
