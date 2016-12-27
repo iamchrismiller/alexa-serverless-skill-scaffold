@@ -15,7 +15,6 @@ module.exports.alexa = (event, context, callback) => {
     const alexa = Alexa.handler(event, context);
     // @NOTE Must Set Lambda Environment Variable ALEXA_APP_ID
     // alexa.APP_ID = process.env.ALEXA_APP_ID;
-    // alexa.locale = 'en-US';
     alexa.resources = resources;
     alexa.registerHandlers(handlers);
     alexa.execute();

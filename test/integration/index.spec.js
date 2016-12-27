@@ -32,9 +32,11 @@ test('Index Handler Alexa', (done) => {
     callback: function(err, result) {
       expect(result.version).toEqual('1.0');
       expect(result.response.outputSpeech.type).toEqual('SSML');
-      expect(result.response.outputSpeech.ssml).toEqual(
-        '<speak> Hello World! </speak>'
-      );
+      expect([
+        '<speak> Hello </speak>',
+        '<speak> Hey There </speak>',
+        '<speak> Hi </speak>'
+      ]).toContain(result.response.outputSpeech.ssml)
       done();
     },
   });

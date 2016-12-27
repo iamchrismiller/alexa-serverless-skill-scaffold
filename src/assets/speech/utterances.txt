@@ -1,2 +1,2 @@
-HelloWorld scaffold hello
-HelloWorld scaffold hello world
+HelloWorld hello
+HelloWorld hello world

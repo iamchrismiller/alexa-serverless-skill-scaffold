@@ -3,13 +3,11 @@
 module.exports = {
   'en-US': {
     translation: {
-      HELP_MESSAGE: 'You can say scaffold hello or scaffold hello world',
-      HELP_REPROMPT: 'What can I do for you?',
       GENERIC_ERROR: 'Looks like something went wrong, try again later!',
-      STOP_MESSAGES: [
-        'Goodbye!',
-        'Talk soon!',
-      ],
+      HELP_MESSAGE: 'You can say scaffold hello or scaffold hello world',
+      GREETING: ['Hello', 'Hey There', 'Hi'],
+      HELP_REPROMPT: 'What can I do for you?',
+      STOP_MESSAGES: ['Goodbye!', 'Talk soon!'],
     },
   },
 };
