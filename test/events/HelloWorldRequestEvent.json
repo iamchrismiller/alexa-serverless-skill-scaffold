@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "testSession",
+    "application": {
+      "applicationId": "amzn1.ask.skill.xxx"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "testUser"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "request1",
+    "locale": "en-US",
+    "timestamp": "2016-12-26T10:00:00Z",
+    "intent": {
+      "name": "HelloWorld",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

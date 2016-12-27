@@ -1,0 +1,36 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+
+service: scaffold
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: us-east-1
+  memorySize: 512
+  profile: default
+
+package:
+  exclude: test
+
+functions:
+  index:
+    handler: src/index.main
+    description: 'Scaffold Default for Lambda Serverless Deploy'
+    timeout: 5
+  alexa:
+    handler: src/index.alexa
+    description: 'Alexa Skill Kit Lambda Function'
+    timeout: 5
+    events:
+      - alexaSkill
