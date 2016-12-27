@@ -5,6 +5,6 @@
  */
 module.exports = {
   HelloWorld: function() {
-    this.emit(':tell', 'Hello World, Hey!');
+    this.emit(':tell', 'Hello World!');
   },
 };
