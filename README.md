@@ -1,8 +1,8 @@
 # [Serverless](https://serverless.com/) Scaffold For Alexa Skill Development
 
-## Overview
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
-This is a "spike" to work through lambda + alexa workflows.
+This is a "spike" to work through lambda + alexa workflows to help speed up the development cycles.
 
 This Package combines a few pieces of technology to streamline the Alexa Skill development workflow. I would recommend checking out and reading through the doc's for each of the following libraries and frameworks if you haven't already.
 
@@ -21,14 +21,8 @@ This Package combines a few pieces of technology to streamline the Alexa Skill d
 
 ## Installation
 
-Global due to packages being removed when we prune the devDependencies
-`yarn global add serverless@1.4.0 serverless-test-plugin@0.2.4`
-
-You may need to add the following to your ~/.bash_profile
-if you encounter an issue with global yarn binaries
-`export PATH="$PATH:$(yarn global bin)"`
-
 Install Project Local Dependencies
+
 `yarn install`
 
 ## Setup AWS credentials
@@ -75,38 +69,71 @@ For Integration testing we are leveraging Lambda Local to test the lambda method
 <!-- `serverless invoke --function spike --stage dev --region us-east-1 --log` -->
 <!-- `serverless invoke --function <functionName> --stage <stage> --region us-east-1 --log` -->
 
+## Security Check
+
+Node Security helps you keep your node applications secure
+
+All of the [advisories](https://nodesecurity.io/advisories) are enabled by default.
+You can add exception within the `.nsprc` file
+
+`yarn security`
+
+
 ## Deploying Service
 
 For Deploying our Lambda Functions we leverage Serverless to create the Stack
 and push updates to existing lambda functions
 
-`yarn  deploy`
+`yarn deploy`
 
 Serverless Deploy Output should look something like this
 
 ```sh
+Serverless: Bundling with Webpack...
+Time: 643ms
+        Asset     Size  Chunks             Chunk Names
+     alexa.js   125 kB       0  [emitted]  alexa
+      read.js  2.86 kB       1  [emitted]  read
+    create.js  2.87 kB       2  [emitted]  create
+ alexa.js.map   148 kB       0  [emitted]  alexa
+  read.js.map  3.44 kB       1  [emitted]  read
+create.js.map  3.46 kB       2  [emitted]  create
 Serverless: Packaging service...
 Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading service .zip file to S3 (3.81 MB)...
+Serverless: Uploading service .zip file to S3 (71.28 KB)...
 Serverless: Updating Stack...
 Serverless: Checking Stack update progress...
-.
+.......
 Serverless: Stack update finished...
+Serverless: Removing old service versions...
 Service Information
 service: scaffold
 stage: dev
 region: us-east-1
 api keys:
-  None
+  DummyKey: fLuGVZ4uHdaRoPbDIPgZ18ylF397e9e28atbqx0l
 endpoints:
-  None
+  POST - https://om0u4ne8n0.execute-api.us-east-1.amazonaws.com/dev/create
+  GET - https://om0u4ne8n0.execute-api.us-east-1.amazonaws.com/dev/read
 functions:
+  scaffold-dev-read: arn:aws:lambda:us-east-1:558960024175:function:scaffold-dev-read
   scaffold-dev-alexa: arn:aws:lambda:us-east-1:558960024175:function:scaffold-dev-alexa
-  scaffold-dev-index: arn:aws:lambda:us-east-1:558960024175:function:scaffold-dev-index
-✨  Done in 52.49s.
- ```
+  scaffold-dev-create: arn:aws:lambda:us-east-1:558960024175:function:scaffold-dev-create
+✨  Done in 56.75s.
+```
+
+## Deploying an individual function within service
+
+Currently Unsupported, tracking issue [here](https://github.com/elastic-coders/serverless-webpack/issues/60)
 
 ## Notes
 
 Workaround for production pruning of dev dependencies
 https://github.com/yarnpkg/yarn/issues/696
+
+
+DLQ Support for Lambdas (waiting on CF impl)
+https://github.com/serverless/serverless/issues/2982
+
+Emulate AWS λ and API Gateway locally when developing your Serverless project
+https://github.com/dherault/serverless-offline

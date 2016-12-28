@@ -28,6 +28,7 @@ package:
   - coverage/**
   - test/**
   - policies/**
+  - node_modules/**
   - .editorconfig
   - .env-*
   - .eslint*
@@ -38,22 +39,32 @@ package:
 
 functions:
   alexa:
-    handler: src/lambdas/alexa.main
+    src:  src/lambdas/alexa
+    handler: alexa.main
     description: 'Alexa Skill Kit Lambda Function'
     timeout: 5
     events:
       - alexaSkill
   create:
-    handler: src/lambdas/create.main
+    src:  src/lambdas/create
+    handler: create.main
+    description: 'API Gateway Lambda For POST Requests'
+    timeout: 5
     events:
       - http:
           path: create
           method: post
           cors: true
   read:
-    handler: src/lambdas/read.main
+    src:  src/lambdas/read
+    handler: read.main
+    description: 'API Gateway Lambda For GET Requests'
+    timeout: 5
     events:
       - http:
           path: read
           method: get
           cors: true
+
+plugins:
+  - serverless-webpack
