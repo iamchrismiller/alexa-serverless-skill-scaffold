@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
+
 'use strict';
 
 /**
  * i18n Strings for Alexa Handlers
  */
 module.exports = {
-  /* eslint-disable max-len */
   'en-US': {
     translation: {
       // This could be an environment variable?
@@ -28,5 +29,4 @@ module.exports = {
       GENERIC_ERROR: 'Looks like something went wrong, try again later!',
     },
   },
-  /* eslint-enable max-len */
 };

@@ -1,6 +1,6 @@
 {
   "session": {
-    "sessionId": "testSession",
+    "sessionId": "SessionId.3",
     "application": {
       "applicationId": "amzn1.ask.skill.xxx"
     },
@@ -8,13 +8,13 @@
       "STATE": "APP"
     },
     "user": {
-      "userId": "testUser"
+      "userId": "amzn1.ask.account.xxx"
     },
     "new": true
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "request1",
+    "requestId": "EdwRequestId.1",
     "locale": "en-US",
     "timestamp": "2016-12-26T10:00:00Z",
     "intent": {

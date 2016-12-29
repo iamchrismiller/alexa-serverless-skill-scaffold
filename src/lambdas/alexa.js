@@ -5,6 +5,8 @@ const Alexa = require('alexa-sdk');
 const resources = require('./../alexa/resources');
 const appHandler = require('./../alexa/handlers/app');
 const gameHandler = require('./../alexa/handlers/game');
+const launchAppIntent = require('./../alexa/intents/launch');
+const unhandledIntent = require('./../alexa/intents/unhandled');
 
 /**
  * Alexa Handler
@@ -20,7 +22,12 @@ module.exports.main = (event, context, callback) => {
   alexa.resources = resources;
   alexa.registerHandlers(
     appHandler,
-    gameHandler
+    gameHandler,
+    {
+      'LaunchRequest': launchAppIntent,
+      'Unhandled': unhandledIntent,
+    }
   );
+
   alexa.execute();
 };

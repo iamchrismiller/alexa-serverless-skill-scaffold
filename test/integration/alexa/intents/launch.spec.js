@@ -7,11 +7,11 @@ const path = require('path');
 const lambdaLocal = require('lambda-local');
 lambdaLocal.getLogger().level = 'error';
 
-test('Lambda:Alexa:StopIntent', (done) => {
+test('Lambda:Alexa:LaunchRequest', (done) => {
   lambdaLocal.execute({
     lambdaPath: path.join(__dirname, '../../../../src/lambdas/alexa.js'),
     lambdaHandler: 'main',
-    event: require('./../../../events/LaunchIntentRequestEvent.json'),
+    event: require('./../../../events/LaunchRequestEvent.json'),
     callbackWaitsForEmptyEventLoop: false,
     callback: function(err, result) {
       expect(result.version).toEqual('1.0');
