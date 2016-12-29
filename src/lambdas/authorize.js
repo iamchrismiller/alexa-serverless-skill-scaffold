@@ -1,6 +1,4 @@
 
-const httpHelper = require('./../helpers/http');
-
 const policies = require('./../helpers/policies');
 const auth = require('./../helpers/auth');
 
@@ -11,11 +9,8 @@ const auth = require('./../helpers/auth');
  * @param {function} callback
  */
 module.exports.main = (event, context, callback) => {
-  const clientId = event.clientId;
-  const accessToken = event.accessToken;
   const principalId = 'user';
-
-  if (auth.isTokenValid(accessToken)) {
+  if (auth.isTokenValid(event.accessToken)) {
     callback(null, policies.generate(principalId, 'Allow', event.methodArn));
     return;
   }

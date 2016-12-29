@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 const authHelper = require('./../../../src/helpers/auth');
 
 test('Helpers:Auth:isTokenValid', () => {

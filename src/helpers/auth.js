@@ -1,9 +1,8 @@
 
 /**
  * Validate Token
- * @param {string} principalId
- * @param {object} effect
- * @param {object} resource
+ * @param {string} token
+ * @return {boolean}
  */
 module.exports.isTokenValid = function(token) {
   // Rudimentary Length Check

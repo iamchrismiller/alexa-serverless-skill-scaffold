@@ -4,12 +4,13 @@
  * @param {string} principalId
  * @param {object} effect
  * @param {object} resource
+ * @return {boolean}
  */
 module.exports.generate = function(principalId, effect, resource) {
-  let response = {
+  const response = {
     context: {},
     principalId: principalId,
-    policyDocument: {}
+    policyDocument: {},
   };
 
   if (effect && resource) {
@@ -17,7 +18,7 @@ module.exports.generate = function(principalId, effect, resource) {
     response.policyDocument.Statement = [{
       Action: 'execute-api:Invoke',
       Effect: effect,
-      Resource : resource
+      Resource: resource,
     }];
   }
   return response;

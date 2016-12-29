@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 // Node
 const path = require('path');
 
@@ -13,11 +15,9 @@ test('Lambda:Alexa:StopIntent', (done) => {
     callbackWaitsForEmptyEventLoop: false,
     callback: function(err, result) {
       expect(result.version).toEqual('1.0');
-      /* eslint-disable max-len */
       expect([
         '<speak> scaffold: You can ask me to think of a number or say help. What would you like? </speak>',
       ]).toContain(result.response.outputSpeech.ssml);
-      /* eslint-enable max-len */
       expect(result.response.outputSpeech.type).toEqual('SSML');
       done();
     },
