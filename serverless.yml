@@ -10,32 +10,21 @@
 #    docs.serverless.com
 #
 
-service: scaffold
+service: serverless-scaffold
 
 provider:
   name: aws
   runtime: nodejs4.3
-  stage: dev
+  memorySize: 256
   region: us-east-1
-  memorySize: 512
-  # cfLogs: true
-  profile: default
-  apiKeys:
-    - DummyKey
+  stage: ${opt:stage, self:custom.defaultStage}
+  profile: ${self:custom.profiles.${self:provider.stage}}
 
-package:
-  exclude:
-  - coverage/**
-  - test/**
-  - policies/**
-  - node_modules/**
-  - .editorconfig
-  - .env-*
-  - .eslint*
-  - .gitignore
-  - .npmignore
-  - LICENSE
-  - README.md
+custom:
+  defaultStage: development
+  profiles:
+    development: default
+    production: default
 
 functions:
   alexa:

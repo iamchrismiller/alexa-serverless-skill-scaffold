@@ -1337,6 +1337,10 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
+dotenv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
+
 download@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/download/-/download-5.0.2.tgz#89c8ab55a3be41ef2c8d787995af81a1d91d2302"
@@ -3274,7 +3278,7 @@ npmlog@^4.0.1:
     gauge "~2.7.1"
     set-blocking "~2.0.0"
 
-nsp-formatter-checkstyle@^1.0.1:
+nsp-formatter-checkstyle@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nsp-formatter-checkstyle/-/nsp-formatter-checkstyle-1.0.1.tgz#2446b19050a6c85fc1d972ba8d2a18d01bcfbf9a"
   dependencies:
@@ -3898,9 +3902,9 @@ serverless-test-plugin@0.2.4:
     intercept-stdout "^0.1.2"
     junitwriter "^0.3.1"
 
-serverless-webpack@1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-1.0.0-rc.2.tgz#bf1b16b2e60f6507e469067c07bfaaf13cd23bc4"
+serverless-webpack@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-1.0.0-rc.3.tgz#7fd209a79119cf3b1f0f156434d42740dc217f76"
   dependencies:
     bluebird "^3.4.0"
     body-parser "^1.15.2"

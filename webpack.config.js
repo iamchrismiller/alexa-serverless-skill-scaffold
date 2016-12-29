@@ -13,9 +13,7 @@ module.exports = {
     const functions = {};
     const config = yaml.safeLoad(fs.readFileSync('./serverless.yml', 'utf8'));
     return Object.keys(config.functions).reduce((acc, name) => {
-      // remove extension if exists
-      const file = config.functions[name].src.replace(/\.[^\.]*$/, '');
-      acc[name] = `./${file}.js`;
+      acc[name] = `./${config.functions[name].src.replace(/\.[^\.]*$/, '')}.js`;
       return acc;
     }, {});
 	})(),

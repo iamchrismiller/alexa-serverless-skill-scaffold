@@ -16,6 +16,7 @@
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:PutRolePolicy",
+                "iam:DeleteRolePolicy",
                 "apigateway:POST",
                 "apigateway:GET",
                 "apigateway:PUT",

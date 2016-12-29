@@ -29,15 +29,22 @@ Install Project Local Dependencies
 
 https://serverless.com/framework/docs/providers/aws/guide/credentials/
 
+You will want to setup A profile for each environment : (<projectName>Development, <projectName>Production)
+
 ```sh
-serverless config credentials --provider aws --key <KEY> --secret <SECRET>
+serverless config credentials --provider aws --key <KEY> --secret <SECRET> --profile development
 ```
 
 ```sh
 Serverless: Setting up AWS...
 Serverless: Saving your AWS profile in "~/.aws/credentials"...
-Serverless: Success! Your AWS access keys were stored under the "default" profile.
+Serverless: Success! Your AWS access keys were stored under the "<projectName><environment>" profile.
 ```
+
+This can also be done manually by adding the appropriate profiles in
+
+`~/.aws/credentials`
+
 
 ## Setting Up AWS Policy
 

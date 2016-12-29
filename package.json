@@ -16,23 +16,27 @@
     "js-yaml": "3.7.0",
     "lambda-local": "1.3.0",
     "nsp": "2.6.2",
-    "nsp-formatter-checkstyle": "^1.0.1",
-    "serverless-webpack": "1.0.0-rc.2",
+    "nsp-formatter-checkstyle": "1.0.1",
+    "serverless": "1.4.0",
+    "serverless-test-plugin": "0.2.4",
+    "serverless-webpack": "1.0.0-rc.3",
     "webpack": "1.14.0",
     "yarn-run-all": "3.1.1"
   },
   "dependencies": {
-    "alexa-sdk": "1.0.6",
-    "serverless": "1.4.0",
-    "serverless-test-plugin": "0.2.4"
+    "alexa-sdk": "1.0.6"
   },
   "scripts": {
     "lint": "eslint src/**/*.js test/**/*.js",
     "lint:verbose": "yarn run lint -- --format 'node_modules/eslint-friendly-formatter'",
     "security": "nsp check --output summary",
     "test": "jest",
-    "deploy": "serverless deploy",
-    "predeploy": "npm-run-all lint test security"
+    "predeploy": "npm-run-all lint test security",
+    "deploy": "serverless deploy --verbose",
+    "deploy:dev": "yarn run deploy -- --stage development",
+    "deploy:prod": "yarn run deploy -- --stage production",
+    "remove:dev": "serverless remove --stage development",
+    "remove:prod": "serverless remove --stage production"
   },
   "jest": {
     "bail": true,
