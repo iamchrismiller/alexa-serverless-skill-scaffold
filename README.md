@@ -133,6 +133,11 @@ functions:
 
 Currently Unsupported, tracking issue [here](https://github.com/elastic-coders/serverless-webpack/issues/60)
 
+
+## Testing Deployed Skill without Device
+
+https://echosim.io/
+
 ## Notes
 
 Workaround for production pruning of dev dependencies
