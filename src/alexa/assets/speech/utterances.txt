@@ -1,2 +1,15 @@
 HelloWorld hello
 HelloWorld hello world
+
+NumberGameQuestion think of a number
+NumberGameQuestion think of a number between {min} and {max}
+
+NumberGameResponse {guess}
+NumberGameResponse is it {guess}
+NumberGameResponse how about {guess}
+NumberGameResponse what about {guess}
+NumberGameResponse i guess {guess}
+NumberGameResponse i'm thinking of {guess}
+NumberGameResponse i'm thinking {guess}
+NumberGameResponse are you thinking of {guess}
+NumberGameResponse are you thinking {guess}

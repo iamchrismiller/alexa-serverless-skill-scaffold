@@ -1,3 +1,4 @@
+
 /**
  * Amazon.HelpIntent Alexa Handler
  * @this Refers to Alexa SDK Context

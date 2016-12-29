@@ -1,3 +1,6 @@
+
+const httpHelper = require('./../helpers/http');
+
 /**
  * Create Handler
  * @param {object} event
@@ -7,10 +10,7 @@
 module.exports.main = (event, context, callback) => {
   callback(null, {
     statusCode: 201,
-    headers: {
-      // Lets figure out how to lock this down
-      'Access-Control-Allow-Origin': '*',
-    },
+    headers: httpHelper.defaultHeaders,
     body: JSON.stringify({
       message: 'Created Resource',
       input: event,

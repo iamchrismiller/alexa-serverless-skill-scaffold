@@ -5,20 +5,31 @@
       "applicationId": "amzn1.ask.skill.xxx"
     },
     "attributes": {
+      
     },
     "user": {
       "userId": "testUser"
     },
     "new": true
   },
+
   "request": {
     "type": "IntentRequest",
     "requestId": "request2",
     "locale": "en-US",
     "timestamp": "2016-12-26T10:00:00Z",
     "intent": {
-      "name": "AMAZON.HelpIntent",
-      "slots": {}
+      "name": "NumberGameQuestion",
+      "slots": {
+        "min": {
+          "name": "min",
+          "value": "5"
+        },
+        "max": {
+          "name": "min",
+          "value": "20"
+        }
+      }
     }
   },
   "version": "1.0"

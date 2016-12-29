@@ -3,9 +3,8 @@ const Alexa = require('alexa-sdk');
 
 // Local
 const resources = require('./../alexa/resources');
-const helloWorldIntentHandler = require('./../alexa/handlers/helloWorld');
-const helpIntentHandler = require('./../alexa/handlers/help');
-const cancelIntentHandler = require('./../alexa/handlers/cancel');
+const appHandler = require('./../alexa/handlers/app');
+const gameHandler = require('./../alexa/handlers/game');
 
 /**
  * Alexa Handler
@@ -17,13 +16,11 @@ const cancelIntentHandler = require('./../alexa/handlers/cancel');
  */
 module.exports.main = (event, context, callback) => {
   const alexa = Alexa.handler(event, context);
-  // alexa.APP_ID = process.env.ALEXA_APP_ID;
+  alexa.APP_ID = process.env.ALEXA_APP_ID;
   alexa.resources = resources;
-  // This could be a seperate Definition?
-  alexa.registerHandlers({
-    'HelloWorld': helloWorldIntentHandler,
-    'AMAZON.HelpIntent': helpIntentHandler,
-    'AMAZON.CancelIntent': cancelIntentHandler,
-  });
+  alexa.registerHandlers(
+    appHandler,
+    gameHandler
+  );
   alexa.execute();
 };

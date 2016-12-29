@@ -6,9 +6,9 @@ const yaml = require('js-yaml');
 
 module.exports = {
 	/**
-	* Parse the serveless.yml and reduce all functions
-	* down to { functionName: 'path/to/lambda'}
-	*/
+	 * Parse the serveless.yml and reduce all functions
+	 * down to { functionName: 'path/to/lambda'}
+	 */
 	entry : (function() {
     const functions = {};
     const config = yaml.safeLoad(fs.readFileSync('./serverless.yml', 'utf8'));

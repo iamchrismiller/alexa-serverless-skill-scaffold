@@ -1,10 +1,38 @@
 {
   "intents": [
+    {
+      "intent": "LaunchRequest"
+    },
   	{
       "intent": "HelloWorld"
     },
+    {
+      "intent": "NumberGameQuestion",
+      "slots": [
+        {
+          "name": "min",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "max",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "NumberGameResponse",
+      "slots": [
+        {
+          "name": "guess",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
   	{
     	"intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
     },
     {
       "intent": "AMAZON.CancelIntent"

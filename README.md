@@ -49,7 +49,7 @@ This can also be done manually by adding the appropriate profiles in
 ## Setting Up AWS Policy
 
 You will want to create the custom policy in AWS to allow Serverless to do its job
-The current policy that works `policies/serverless.policy`
+The current policy that works `providers/aws/serverless.policy`
 
 You may want to lock this down a bit further
 
