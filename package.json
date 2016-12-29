@@ -19,7 +19,7 @@
     "nsp-formatter-checkstyle": "1.0.1",
     "serverless": "1.4.0",
     "serverless-test-plugin": "0.2.4",
-    "serverless-webpack": "1.0.0-rc.3",
+    "serverless-webpack": "1.0.0-rc.2",
     "webpack": "1.14.0",
     "yarn-run-all": "3.1.1"
   },
@@ -36,7 +36,9 @@
     "deploy:dev": "yarn run deploy -- --stage development",
     "deploy:prod": "yarn run deploy -- --stage production",
     "remove:dev": "serverless remove --stage development",
-    "remove:prod": "serverless remove --stage production"
+    "remove:prod": "serverless remove --stage production",
+    "serve": "serverless webpack serve",
+    "build": "webpack"
   },
   "jest": {
     "bail": true,
