@@ -4,7 +4,9 @@
     "application": {
       "applicationId": "amzn1.ask.skill.xxx"
     },
-    "attributes": {},
+    "attributes": {
+      "STATE": "GAME"
+    },
     "user": {
       "userId": "testUser"
     },

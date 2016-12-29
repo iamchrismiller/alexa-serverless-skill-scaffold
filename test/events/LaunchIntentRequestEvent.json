@@ -5,6 +5,7 @@
       "applicationId": "amzn1.ask.skill.xxx"
     },
     "attributes": {
+      "STATE": "APP"
     },
     "user": {
       "userId": "testUser"

@@ -11,7 +11,7 @@ const unhandledIntent = require('./../intents/unhandled');
 /**
  * App State Handler
  */
-module.exports = Alexa.CreateStateHandler(states.START, {
+module.exports = Alexa.CreateStateHandler(states.APP, {
   'LaunchRequest': launchRequestIntent,
   'AMAZON.HelpIntent': helpIntent,
   'AMAZON.CancelIntent': stopIntent,
