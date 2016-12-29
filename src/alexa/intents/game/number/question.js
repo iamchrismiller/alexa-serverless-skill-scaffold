@@ -1,5 +1,6 @@
 
 const states = require('./../../../constants/states');
+const numberHelper = require('./../../../../helpers/number');
 
 /**
  * Number Guess Game Question Alexa Handler
@@ -9,22 +10,23 @@ module.exports = function() {
   // Set Application State to GAME
   this.handler.state = states.GAME;
 
-  const slots = this.event.request.intent.slots;
-  const min = slots.min ? slots.min.value : 1;
-  const max = slots.max ? slots.max.value : 100;
+  const slots = this.event.request.intent.slots || {};
+  const min = slots.min && slots.min.value? slots.min.value : 1;
+  const max = slots.max && slots.max.value? slots.max.value : 10;
 
   Object.assign(this.attributes, {
     guess: {
       min,
       max,
-      value:  ~~(Math.random() * (max - min + 1) + min)
+      value:  numberHelper.getNumberWithin(min, max)
     }
   });
 
-  this.emit(':tell',
+  this.emit(':ask',
     this.t('GAME_QUESTION', {
       min: min,
       max: max
-    })
+    }),
+    this.t('GAME_QUESTION_REPROMPT'),
   );
 };

@@ -2,13 +2,13 @@
   "session": {
     "sessionId": "SessionId.1",
     "application": {
-      "applicationId": "amzn1.ask.skill.xxx"
+      "applicationId": "amzn1.ask.skill.test"
     },
     "attributes": {
       "STATE": "GAME"
     },
     "user": {
-      "userId": "amzn1.ask.account.xxx"
+      "userId": "amzn1.ask.account.test"
     },
     "new": true
   },

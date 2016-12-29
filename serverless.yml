@@ -15,13 +15,16 @@ service: serverless-scaffold
 provider:
   name: aws
   runtime: nodejs4.3
-  memorySize: 256
+  memorySize: ${self:custom.memory.${self:provider.stage}}
   region: us-east-1
   stage: ${opt:stage, self:custom.defaultStage}
   profile: ${self:custom.profiles.${self:provider.stage}}
 
 custom:
   defaultStage: development
+  memory:
+    development: 128
+    production: 256
   profiles:
     development: default
     production: default

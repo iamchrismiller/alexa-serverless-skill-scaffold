@@ -7,23 +7,26 @@ const path = require('path');
 const lambdaLocal = require('lambda-local');
 lambdaLocal.getLogger().level = 'error';
 
-test('Lambda:Alexa:LaunchRequest', (done) => {
+test('Lambda:Alexa:NumberGame:YesIntent', (done) => {
+  const event = require('./../../../../../events/NumberGameYesIntentRequestEvent.json');
   lambdaLocal.execute({
-    lambdaPath: path.join(__dirname, '../../../../src/lambdas/alexa.js'),
+    lambdaPath: path.join(__dirname, '../../../../../../src/lambdas/alexa.js'),
     lambdaHandler: 'main',
-    event: require('./../../../events/LaunchRequestEvent.json'),
+    event: event,
     callbackWaitsForEmptyEventLoop: false,
     callback: function(err, result) {
       expect(result.version).toEqual('1.0');
       expect(result.response.shouldEndSession).toEqual(false);
-      expect([
-        '<speak> scaffold: You can ask me to think of a number, hello world or say help. What would you like? </speak>',
-      ]).toContain(result.response.outputSpeech.ssml);
       expect(result.response.outputSpeech.type).toEqual('SSML');
       expect([
-        '<speak> This is when you tell me what to do. Maybe ask me to think of a number? </speak>',
-      ]).toContain(result.response.reprompt.outputSpeech.ssml);
+        `<speak> Okay, i've got a number between 1 and 10. What is it? </speak>`,
+      ]).toContain(result.response.outputSpeech.ssml);
+
       expect(result.response.reprompt.outputSpeech.type).toEqual('SSML');
+
+      expect([
+        `<speak> What is the number I am thinking of? </speak>`,
+      ]).toContain(result.response.reprompt.outputSpeech.ssml);
 
       done();
     },

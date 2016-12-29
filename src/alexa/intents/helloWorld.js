@@ -4,5 +4,8 @@
  */
 module.exports = function() {
   const greetingIndex = ~~(Math.random() * this.t('HELLO_WORLD').length);
-  this.emit(':tell', this.t('HELLO_WORLD')[greetingIndex]);
+  this.emit(':ask',
+    this.t('HELLO_WORLD')[greetingIndex],
+    this.t('NEXT_REQUEST')
+  );
 };

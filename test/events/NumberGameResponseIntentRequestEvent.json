@@ -2,7 +2,7 @@
   "session": {
     "sessionId": "SessionId.1",
     "application": {
-      "applicationId": "amzn1.ask.skill.xxx"
+      "applicationId": "amzn1.ask.skill.test"
     },
     "attributes": {
       "STATE": "GAME",
@@ -13,14 +13,14 @@
       }
     },
     "user": {
-      "userId": "amzn1.ask.account.xxx"
+      "userId": "amzn1.ask.account.test"
     },
     "new": true
   },
 
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.1",
+    "requestId": "EdwRequestId.2",
     "locale": "en-US",
     "timestamp": "2016-12-26T10:00:00Z",
     "intent": {

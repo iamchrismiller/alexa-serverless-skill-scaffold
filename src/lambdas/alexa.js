@@ -18,7 +18,7 @@ const unhandledIntent = require('./../alexa/intents/unhandled');
  */
 module.exports.main = (event, context, callback) => {
   const alexa = Alexa.handler(event, context);
-  alexa.APP_ID = process.env.ALEXA_APP_ID;
+  alexa.APP_ID = event.session.application.applicationId;
   alexa.resources = resources;
   alexa.registerHandlers(
     appHandler,
