@@ -7,12 +7,16 @@ module.exports = function() {
 
   if (userGuess && userGuess.value === this.attributes.guess.value) {
     this.emit(':tell',
-      `You got it. I was thinking of ${this.attributes.guess.value}`
+      this.t('GAME_RESPONSE_WIN', {
+        number: this.attributes.guess.value,
+      })
     );
 
   } else {
     this.emit(':tell',
-      `Well, I was thinking of ${this.attributes.guess.value}`
+      this.t('GAME_RESPONSE_LOSE', {
+        number: this.attributes.guess.value,
+      })
     );
   }
 };

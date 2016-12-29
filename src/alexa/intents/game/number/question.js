@@ -21,8 +21,10 @@ module.exports = function() {
     }
   });
 
-  // Move to resources with variables
   this.emit(':tell',
-    `Okay, i've got a number between ${min} and ${max}. What is it?`
+    this.t('GAME_QUESTION', {
+      min: min,
+      max: max
+    })
   );
 };
