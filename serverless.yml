@@ -57,6 +57,17 @@ functions:
           path: read
           method: get
           cors: true
+  sso:
+      src:  src/lambdas/authorize
+      handler: authorize.translate
+      description: 'SSO Lambda Translation Proxy'
+      timeout: 5
+      events:
+        - http:
+            path: read
+            method: get
+            cors: true
+
 
 plugins:
   - serverless-webpack
