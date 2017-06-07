@@ -32,7 +32,7 @@ https://serverless.com/framework/docs/providers/aws/guide/credentials/
 You will want to setup A profile for each environment : (<projectName>Development, <projectName>Production)
 
 ```sh
-serverless config credentials --provider aws --key <KEY> --secret <SECRET> --profile development
+serverless config credentials --provider aws --key <KEY> --secret <SECRET> --profile scaffoldDevelopment
 ```
 
 ```sh

@@ -1,6 +1,15 @@
 
 const states = require('./../../../constants/states');
-const numberHelper = require('./../../../../helpers/number');
+
+/**
+ * Get A Random Number Within
+ * @param {number} min
+ * @param {number} max
+ * @return {number}
+ */
+const getNumberWithin = function(min, max) {
+  return ~~(Math.random() * (max - min + 1) + min);
+};
 
 /**
  * Number Guess Game Question Alexa Handler
@@ -18,7 +27,7 @@ module.exports = function() {
     guess: {
       min,
       max,
-      value:  numberHelper.getNumberWithin(min, max)
+      value:  getNumberWithin(min, max)
     }
   });
 

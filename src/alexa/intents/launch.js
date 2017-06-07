@@ -9,7 +9,7 @@ module.exports = function() {
   // Set Application State to APP
   this.handler.state = states.APP;
   this.emit(':ask',
-    this.t(['SKILL_NAME']) + ': ' +  this.t(['WELCOME_MESSAGE']),
+    this.t(['SKILL_NAME']) + ': ' + this.t(['WELCOME_MESSAGE']),
     this.t(['WELCOME_MESSAGE_REPROMPT'])
   );
 };

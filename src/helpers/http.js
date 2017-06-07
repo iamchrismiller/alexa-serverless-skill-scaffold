@@ -3,6 +3,6 @@
  * @return {object}
  */
 module.exports.defaultHeaders = {
-  // Lets figure out how to lock this down
+  // @Todo: Lock this down
   'Access-Control-Allow-Origin': '*',
 };
